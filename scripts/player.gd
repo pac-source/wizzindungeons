@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 135.0
-const ACCELERATION = 150.0
+const SPEED = 235.0
+const ACCELERATION = 210.0
 const FRICTION = 240.0
 
 const GRAVITY = 2000.0
@@ -11,7 +11,7 @@ const FAST_FALL_GRAVITY = 5000.0
 const JUMP_VELOCITY = -500.0
 
 const INPUT_BUFFER = 0.125
-const JUMP_BUFFER = 0.08
+const JUMP_BUFFER = 0.18
 
 var input_buffer_timer : Timer
 var jump_buffer_timer : Timer
@@ -36,7 +36,7 @@ func _physics_process(delta):
 	var horizontal_input = Input.get_axis("ui_left","ui_right") 
 	var jump_attempted = Input.is_action_just_pressed("ui_select")
 	
-	# Sprite
+	# Sprite animation
 	if is_on_floor():
 		if horizontal_input:
 			sprite_2d.play("run")
@@ -74,7 +74,7 @@ func _physics_process(delta):
 				jump_available = false
 
 	var floor_damping : float = 1.0 if is_on_floor() else 0.2
-	var dash_multiplier : float = 2.0 if Input.is_action_pressed("ui_home") else 1.0
+	var dash_multiplier : float = 1.6 if Input.is_action_pressed("ui_home") else 1.0
 
 	if horizontal_input:
 		velocity.x = move_toward(velocity.x, horizontal_input * SPEED * dash_multiplier, ACCELERATION * delta)
