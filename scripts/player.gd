@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
-const SPEED = 235.0
+const SPEED = 105.0
 const ACCELERATION = 120.0
 const FRICTION = 420.0
+const MAX_SPEED = 125.0
+const MIN_DASH_SPEED = 465.0
+const MAX_DASH_SPEED = 620.0
 
 const GRAVITY = 2000.0
 const FALL_GRAVITY = 3000.0
@@ -47,7 +50,7 @@ func _physics_process(delta : float):
 	if horizontal_input == 1:
 		sprite_2d.flip_h = false
 		
-	## HANDLE JUMPING	
+	## HANDLE JUMPING	Co1.0mputer Networks
 	# buffer jumping
 	if jump_attempted or input_buffer_timer.time_left > 0:
 		if jump_available:
@@ -80,17 +83,25 @@ func _physics_process(delta : float):
 	var dash_multiplier : float = 1.6 if Input.is_action_pressed("ui_home") else 1.0
 	
 	# basic movements
-	#### TODO: CHANGE move_toward() to custom function
+	#### TODO: MAKE SPEED OSCILATE
 	if horizontal_input:
 		velocity.x += move_toward(horizontal_input, horizontal_input * SPEED * dash_multiplier, ACCELERATION * delta)
+		var current_velocity = -velocity.x if velocity.x < 0 else velocity.x
 		# prevent sliding 
 		if (horizontal_input > 0 and  velocity.x < 0) or (horizontal_input < 0 and velocity.x > 0) :
 			velocity.x = move_toward(velocity.x, horizontal_input, FRICTION * floor_damping * delta)
-			# print(horizontal_input)
+		
+		if current_velocity > MAX_SPEED and !Input.is_action_pressed("ui_home"):
+			velocity.x = MAX_SPEED if velocity.x > 0 else -MAX_SPEED
+		elif Input.is_action_pressed("ui_home"): 
+			if current_velocity <= MAX_DASH_SPEED:
+				velocity.x += move_toward(horizontal_input, horizontal_input * SPEED * dash_multiplier, ACCELERATION * delta)
+			elif current_velocity > MIN_DASH_SPEED:
+				velocity.x -= move_toward(horizontal_input, horizontal_input * SPEED * dash_multiplier, ACCELERATION * delta)
+		
+		print(velocity.x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, FRICTION * floor_damping * delta)
-	
-	# velocity.x = horizontal_input * SPEED * dash_multiplier * delta
 	
 	## RAYCAST OFFSET
 	#### TODO: FIX raycast errors 
