@@ -4,8 +4,8 @@ const SPEED = 105.0
 const ACCELERATION = 120.0
 const FRICTION = 420.0
 const MAX_SPEED = 125.0
-const MIN_DASH_SPEED = 465.0
-const MAX_DASH_SPEED = 620.0
+const MIN_DASH_SPEED = 265.0
+const MAX_DASH_SPEED = 420.0
 
 const GRAVITY = 2000.0
 const FALL_GRAVITY = 3000.0
@@ -64,7 +64,8 @@ func _physics_process(delta : float):
 	if is_on_floor():
 		jump_available = true
 		
-	# coyote jump
+	# coyote jump 
+		# don't change this indendation
 		coyote_timer = COYOTE_TIME
 	coyote_timer -= delta
 	# print("coyote time: " + str(coyote_timer) + "\ndelta: " + str(delta))
@@ -85,7 +86,7 @@ func _physics_process(delta : float):
 	# basic movements
 	#### TODO: MAKE SPEED OSCILATE
 	if horizontal_input:
-		velocity.x += move_toward(horizontal_input, horizontal_input * SPEED * dash_multiplier, ACCELERATION * delta)
+		velocity.x += horizontal_input * SPEED * dash_multiplier * delta
 		var current_velocity = -velocity.x if velocity.x < 0 else velocity.x
 		# prevent sliding 
 		if (horizontal_input > 0 and  velocity.x < 0) or (horizontal_input < 0 and velocity.x > 0) :
@@ -95,9 +96,9 @@ func _physics_process(delta : float):
 			velocity.x = MAX_SPEED if velocity.x > 0 else -MAX_SPEED
 		elif Input.is_action_pressed("ui_home"): 
 			if current_velocity <= MAX_DASH_SPEED:
-				velocity.x += move_toward(horizontal_input, horizontal_input * SPEED * dash_multiplier, ACCELERATION * delta)
+				velocity.x += horizontal_input * SPEED * dash_multiplier * delta
 			elif current_velocity > MIN_DASH_SPEED:
-				velocity.x -= move_toward(horizontal_input, horizontal_input * SPEED * dash_multiplier, ACCELERATION * delta)
+				velocity.x -= horizontal_input * SPEED * dash_multiplier * delta
 		
 		print(velocity.x)
 	else:
