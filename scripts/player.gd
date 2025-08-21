@@ -8,7 +8,7 @@ const GRAVITY = 2000.0
 const FALL_GRAVITY = 3000.0
 const FAST_FALL_GRAVITY = 30000.0
 
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -550.0
 
 const INPUT_BUFFER = 0.125
 const COYOTE_TIME = 0.08 
@@ -82,7 +82,7 @@ func _physics_process(delta : float):
 	# basic movements
 	#### TODO: CHANGE move_toward() to custom function
 	if horizontal_input:
-		velocity.x = move_toward(velocity.x, horizontal_input * SPEED * dash_multiplier, ACCELERATION * delta)
+		velocity.x += move_toward(horizontal_input, horizontal_input * SPEED * dash_multiplier, ACCELERATION * delta)
 		# prevent sliding 
 		if (horizontal_input > 0 and  velocity.x < 0) or (horizontal_input < 0 and velocity.x > 0) :
 			velocity.x = move_toward(velocity.x, horizontal_input, FRICTION * floor_damping * delta)
