@@ -227,3 +227,19 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_bv5bx")
+
+[node name="left_outer" type="RayCast2D" parent="."]
+position = Vector2(-4, -2)
+target_position = Vector2(0, -25)
+
+[node name="right_outer" type="RayCast2D" parent="."]
+position = Vector2(5, -2)
+target_position = Vector2(0, -25)
+
+[node name="left_inner" type="RayCast2D" parent="."]
+position = Vector2(-1, -2)
+target_position = Vector2(0, -25)
+
+[node name="right_inner" type="RayCast2D" parent="."]
+position = Vector2(2, -2)
+target_position = Vector2(0, -25)
