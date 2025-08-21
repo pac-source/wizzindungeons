@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 235.0
 const ACCELERATION = 120.0
-const FRICTION = 560.0
+const FRICTION = 420.0
 
 const GRAVITY = 2000.0
 const FALL_GRAVITY = 3000.0
@@ -79,20 +79,21 @@ func _physics_process(delta : float):
 	var floor_damping : float = 2.0 if is_on_floor() else 0.2
 	var dash_multiplier : float = 1.6 if Input.is_action_pressed("ui_home") else 1.0
 	
-	#basic movements
+	# basic movements
 	#### TODO: CHANGE move_toward() to custom function
 	if horizontal_input:
 		velocity.x = move_toward(velocity.x, horizontal_input * SPEED * dash_multiplier, ACCELERATION * delta)
-		# right side 
+		# prevent sliding 
 		if (horizontal_input > 0 and  velocity.x < 0) or (horizontal_input < 0 and velocity.x > 0) :
 			velocity.x = move_toward(velocity.x, horizontal_input, FRICTION * floor_damping * delta)
-			print(horizontal_input)
+			# print(horizontal_input)
 	else:
 		velocity.x = move_toward(velocity.x, 0, FRICTION * floor_damping * delta)
 	
 	# velocity.x = horizontal_input * SPEED * dash_multiplier * delta
 	
 	## RAYCAST OFFSET
+	#### TODO: FIX raycast errors 
 	#if player.left_outer.is_colliding() and !player.left_inner.is_colliding() and !player.right_inner.is_colliding() and !player.right_outer.is_colliding():
 		#player.golbal_position.x -= 5
 	#elif !player.left_outer.is_colliding() and !player.left_inner.is_colliding() and !player.right_inner.is_colliding() and player.right_outer.is_colliding():
