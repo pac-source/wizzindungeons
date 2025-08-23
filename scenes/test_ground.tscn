@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://b6rxgn3pmxijg"]
+[gd_scene load_steps=6 format=4 uid="uid://b6rxgn3pmxijg"]
 
 [ext_resource type="Texture2D" uid="uid://ch7hqcyt58bc0" path="res://sprites/Textures-16.png" id="1_ajl4f"]
 [ext_resource type="PackedScene" uid="uid://dhkfexqag7ntu" path="res://scenes/player.tscn" id="2_3e5no"]
+[ext_resource type="PackedScene" uid="uid://dg5e6gf3j6g1f" path="res://scenes/enemy.tscn" id="3_voign"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3e5no"]
 texture = ExtResource("1_ajl4f")
@@ -463,3 +464,6 @@ position = Vector2(68, 146)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 zoom = Vector2(2, 2)
+
+[node name="enemy" parent="." instance=ExtResource("3_voign")]
+position = Vector2(347, 142)
