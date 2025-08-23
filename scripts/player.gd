@@ -37,7 +37,9 @@ func _physics_process(delta : float):
 	## SPRITE  ANIMATION
 	# basic animation
 	if is_on_floor():
-		if horizontal_input:
+		if horizontal_input and !Input.is_action_pressed("ui_home"):
+			sprite_2d.play("walk")
+		elif horizontal_input and Input.is_action_pressed("ui_home"):
 			sprite_2d.play("run")
 		else:
 			sprite_2d.play("idle")
@@ -50,7 +52,7 @@ func _physics_process(delta : float):
 	if horizontal_input == 1:
 		sprite_2d.flip_h = false
 		
-	## HANDLE JUMPING	Co1.0mputer Networks
+	## HANDLE JUMPING
 	# buffer jumping
 	if jump_attempted or input_buffer_timer.time_left > 0:
 		if jump_available:
