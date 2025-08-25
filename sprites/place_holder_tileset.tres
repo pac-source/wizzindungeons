@@ -1,10 +1,10 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cla8r61dr2ccq"]
+[gd_resource type="TileSet" load_steps=6 format=3 uid="uid://c0bco07sfkaxi"]
 
-[ext_resource type="Texture2D" uid="uid://ch7hqcyt58bc0" path="res://sprites/Textures-16.png" id="1_wb6fi"]
-[ext_resource type="PackedScene" uid="uid://bp0nxjp63jltq" path="res://scenes/coin.tscn" id="2_w034a"]
+[ext_resource type="Texture2D" uid="uid://ch7hqcyt58bc0" path="res://sprites/Textures-16.png" id="1_d87ds"]
+[ext_resource type="PackedScene" uid="uid://bp0nxjp63jltq" path="res://scenes/coin.tscn" id="2_ewggy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1g4r3"]
-texture = ExtResource("1_wb6fi")
+texture = ExtResource("1_d87ds")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -454,9 +454,12 @@ texture = ExtResource("1_wb6fi")
 13:31/0 = 0
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_l1ax2"]
-scenes/1/scene = ExtResource("2_w034a")
+scenes/1/scene = ExtResource("2_ewggy")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_d87ds"]
 
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1g4r3")
 sources/2 = SubResource("TileSetScenesCollectionSource_l1ax2")
+sources/3 = SubResource("TileSetScenesCollectionSource_d87ds")

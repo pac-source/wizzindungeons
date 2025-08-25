@@ -4,7 +4,7 @@ const SPEED = 105.0
 const ACCELERATION = 120.0
 const FRICTION = 420.0
 const MAX_SPEED = 125.0
-const MIN_DASH_SPEED = 265.0
+const MIN_DASH_SPEED = 165.0
 const MAX_DASH_SPEED = 420.0
 
 const GRAVITY = 2000.0
@@ -12,6 +12,7 @@ const FALL_GRAVITY = 3000.0
 const FAST_FALL_GRAVITY = 30000.0
 
 const JUMP_VELOCITY = -550.0
+const MAX_JUMP_VELOCITY = -590.0
 
 const INPUT_BUFFER = 0.125
 const COYOTE_TIME = 0.08 
@@ -31,15 +32,15 @@ func _ready():
 	add_child(input_buffer_timer)
 
 func _physics_process(delta : float):
-	var horizontal_input = Input.get_axis("ui_left","ui_right") 
-	var jump_attempted = Input.is_action_just_pressed("ui_select")
+	var horizontal_input = Input.get_axis("move_left", "move_right") 
+	var jump_attempted = Input.is_action_just_pressed("jump")
 	
 	## SPRITE  ANIMATION
 	# basic animation
 	if is_on_floor():
-		if horizontal_input and !Input.is_action_pressed("ui_home"):
+		if horizontal_input and !Input.is_action_pressed("dash"):
 			sprite_2d.play("walk")
-		elif horizontal_input and Input.is_action_pressed("ui_home"):
+		elif horizontal_input and Input.is_action_pressed("dash"):
 			sprite_2d.play("run")
 		else:
 			sprite_2d.play("idle")
@@ -56,7 +57,10 @@ func _physics_process(delta : float):
 	# buffer jumping
 	if jump_attempted or input_buffer_timer.time_left > 0:
 		if jump_available:
-			velocity.y = JUMP_VELOCITY
+			if Input.is_action_pressed("dash"):
+				velocity.y = MAX_JUMP_VELOCITY
+			else:
+				velocity.y = JUMP_VELOCITY
 			jump_available = false
 		elif jump_attempted:
 			input_buffer_timer.start()
@@ -77,32 +81,31 @@ func _physics_process(delta : float):
 		jump_available = true
 	
 	# short jump	
-	if Input.is_action_just_released("ui_select") and velocity.y < 0:
+	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y = JUMP_VELOCITY / 4
 	
 	## MOVEMENT
 	# dashing
 	var floor_damping : float = 2.0 if is_on_floor() else 0.2
-	var dash_multiplier : float = 1.6 if Input.is_action_pressed("ui_home") else 1.0
+	var dash_multiplier : float = 1.6 if Input.is_action_pressed("dash") else 1.0
 	
 	# basic movements
-	#### TODO: MAKE SPEED OSCILATE
 	if horizontal_input:
 		velocity.x += horizontal_input * SPEED * dash_multiplier * delta
 		var current_velocity = -velocity.x if velocity.x < 0 else velocity.x
-		# prevent sliding 
+		# prevent movement sliding 
 		if (horizontal_input > 0 and  velocity.x < 0) or (horizontal_input < 0 and velocity.x > 0) :
 			velocity.x = move_toward(velocity.x, horizontal_input, FRICTION * floor_damping * delta)
 		
-		if current_velocity > MAX_SPEED and !Input.is_action_pressed("ui_home"):
+		if current_velocity > MAX_SPEED and !Input.is_action_pressed("dash"):
 			velocity.x = MAX_SPEED if velocity.x > 0 else -MAX_SPEED
-		elif Input.is_action_pressed("ui_home"): 
-			if current_velocity <= MAX_DASH_SPEED:
+		elif Input.is_action_pressed("dash"): 
+			if current_velocity < MIN_DASH_SPEED:
 				velocity.x += horizontal_input * SPEED * dash_multiplier * delta
-			elif current_velocity > MIN_DASH_SPEED:
+			elif current_velocity > MAX_DASH_SPEED:
 				velocity.x -= horizontal_input * SPEED * dash_multiplier * delta
 		
-		print(velocity.x)
+		# print("velocity.x: " + str(velocity.x) + " current velocity: " + str(current_velocity))
 	else:
 		velocity.x = move_toward(velocity.x, 0, FRICTION * floor_damping * delta)
 	
@@ -118,7 +121,7 @@ func _physics_process(delta : float):
 	move_and_slide()
 
 func get_the_gravity():
-	if Input.is_action_just_pressed("ui_down"):
+	if Input.is_action_just_pressed("duck_down"):
 		return FAST_FALL_GRAVITY
 	else:
 		return GRAVITY
