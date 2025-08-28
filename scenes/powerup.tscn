@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx7l8en1cvq1d"]
+
+[ext_resource type="Texture2D" uid="uid://bj51yi1oynq5x" path="res://sprites/brackeys_platformer_assets/sprites/fruit.png" id="1_8vsy1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pufsy"]
+radius = 7.07107
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ih772"]
+atlas = ExtResource("1_8vsy1")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_406cw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ih772")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="powerup" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_pufsy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_406cw")
