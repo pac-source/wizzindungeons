@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dg5e6gf3j6g1f"]
+[gd_scene load_steps=19 format=3 uid="uid://dg5e6gf3j6g1f"]
 
 [ext_resource type="Texture2D" uid="uid://dv47kwgukxj0j" path="res://sprites/brackeys_platformer_assets/sprites/slime_green.png" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://t1pnouet2vim" path="res://scripts/enemy.gd" id="1_md0e3"]
@@ -14,6 +14,10 @@ region = Rect2(24, 0, 24, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
 atlas = ExtResource("1_7p1mj")
 region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0cyh"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(48, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
 atlas = ExtResource("1_7p1mj")
@@ -66,6 +70,14 @@ animations = [{
 "loop": true,
 "name": &"dead",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0cyh")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -122,17 +134,31 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p1mj"]
 size = Vector2(10, 12)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
+radius = 60.0083
+
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_md0e3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_j0cyh")
 animation = &"walk"
-frame_progress = 0.445341
+
+[node name="raycast_left" type="RayCast2D" parent="."]
+position = Vector2(0, 10)
+target_position = Vector2(-8, 0)
+
+[node name="raycast_right" type="RayCast2D" parent="."]
+position = Vector2(0, 10)
+target_position = Vector2(8, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_7p1mj")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 12)
+[node name="spawn_hit" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="spawn_hitbox" type="CollisionShape2D" parent="spawn_hit"]
+shape = SubResource("CircleShape2D_md0e3")
+debug_color = Color(0.619608, 0.533333, 0, 0.32549)
