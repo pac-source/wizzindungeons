@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://dg5e6gf3j6g1f"]
+[gd_scene load_steps=21 format=3 uid="uid://dg5e6gf3j6g1f"]
 
 [ext_resource type="Texture2D" uid="uid://dv47kwgukxj0j" path="res://sprites/brackeys_platformer_assets/sprites/slime_green.png" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://t1pnouet2vim" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="PackedScene" uid="uid://bfnfdhj1ei3sp" path="res://scenes/death_zone.tscn" id="3_4ra3w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
 atlas = ExtResource("1_7p1mj")
@@ -132,10 +133,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p1mj"]
-size = Vector2(10, 12)
+size = Vector2(8, 10)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
-radius = 60.0083
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_md0e3"]
+size = Vector2(10, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
+size = Vector2(12, 2)
 
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_md0e3")
@@ -152,13 +156,27 @@ target_position = Vector2(-8, 0)
 position = Vector2(0, 10)
 target_position = Vector2(8, 0)
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-4.76837e-07, 2)
+scale = Vector2(5.7, 2.2)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_7p1mj")
 
-[node name="spawn_hit" type="Area2D" parent="."]
-collision_mask = 8
+[node name="death_zone" parent="." instance=ExtResource("3_4ra3w")]
 
-[node name="spawn_hitbox" type="CollisionShape2D" parent="spawn_hit"]
-shape = SubResource("CircleShape2D_md0e3")
-debug_color = Color(0.619608, 0.533333, 0, 0.32549)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="death_zone"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_md0e3")
+debug_color = Color(0.997815, 0.038008, 1.92523e-07, 0.42)
+
+[node name="enemy_death_zone" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_death_zone"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_4ra3w")
+debug_color = Color(3.0563e-06, 0.651343, 0.00629184, 0.42)
+
+[connection signal="area_entered" from="enemy_death_zone" to="." method="_on_enemy_death_zone_area_entered"]
