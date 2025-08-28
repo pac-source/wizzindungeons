@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx7l8en1cvq1d"]
+[gd_scene load_steps=6 format=3 uid="uid://bx7l8en1cvq1d"]
 
 [ext_resource type="Texture2D" uid="uid://bj51yi1oynq5x" path="res://sprites/brackeys_platformer_assets/sprites/fruit.png" id="1_8vsy1"]
+[ext_resource type="Script" uid="uid://bxc4hst01pik6" path="res://scripts/powerup.gd" id="1_ih772"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pufsy"]
 radius = 7.07107
@@ -21,11 +22,15 @@ animations = [{
 }]
 
 [node name="powerup" type="Node2D"]
+script = ExtResource("1_ih772")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_pufsy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_406cw")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
