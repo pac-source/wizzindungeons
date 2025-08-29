@@ -11,6 +11,7 @@ var direction = 1
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var spawn_hit: Area2D = $spawn_hit
 @onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
+@onready var collision_for_enemy: CollisionShape2D = $collision_for_enemy
 
 func _physics_process(delta : float) -> void:
 	velocity.x = move_toward(velocity.x, SPEED * delta, ACCLERATION * delta)
@@ -38,5 +39,6 @@ func _process(delta : float) -> void:
 
 
 func _on_enemy_death_zone_area_entered(area: Area2D) -> void:
+	collision_for_enemy.queue_free()
 	animated_sprite_2d.play("dead")
-	queue_free()
+	
