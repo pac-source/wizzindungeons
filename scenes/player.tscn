@@ -333,8 +333,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bv5bx"]
 size = Vector2(10, 13.5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(10, 17)
 
 [node name="player" type="CharacterBody2D"]
 collision_layer = 13
@@ -346,7 +346,7 @@ animation = &"die"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_bv5bx")
 
 [node name="left_outer" type="RayCast2D" parent="."]
@@ -370,6 +370,6 @@ collision_layer = 13
 collision_mask = 7
 
 [node name="hitbox" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 2)
-shape = SubResource("CircleShape2D_g2els")
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_g2els")
 debug_color = Color(0.961112, 0.186353, 0.175121, 0.42)
