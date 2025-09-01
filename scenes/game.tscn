@@ -188,3 +188,4 @@ position = Vector2(47, 212)
 
 [node name="default_camera" parent="player" instance=ExtResource("8_gee14")]
 position = Vector2(12, 8)
+limit_right = 2622
