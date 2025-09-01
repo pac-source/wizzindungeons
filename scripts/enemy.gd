@@ -41,4 +41,3 @@ func _process(delta : float) -> void:
 func _on_enemy_death_zone_area_entered(area: Area2D) -> void:
 	collision_for_enemy.queue_free()
 	animated_sprite_2d.play("dead")
-	
