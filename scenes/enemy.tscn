@@ -130,7 +130,7 @@ animations = [{
 size = Vector2(14, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p1mj"]
-size = Vector2(12, 8)
+size = Vector2(10, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ra3w"]
 size = Vector2(14, 2)
@@ -146,7 +146,8 @@ scale = Vector2(5.7, 2.2)
 position = Vector2(0, 7)
 sprite_frames = SubResource("SpriteFrames_j0cyh")
 animation = &"walk"
-frame_progress = 0.398443
+frame = 2
+frame_progress = 0.337563
 
 [node name="death_zone" parent="." instance=ExtResource("3_4ra3w")]
 
@@ -159,13 +160,13 @@ debug_color = Color(0.997815, 0.038008, 1.92523e-07, 0.42)
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_7p1mj")
 
-[node name="raycast_left" type="RayCast2D" parent="."]
-position = Vector2(0, 8)
-target_position = Vector2(-8, 0)
-
 [node name="raycast_right" type="RayCast2D" parent="."]
 position = Vector2(0, 8)
-target_position = Vector2(8, 0)
+target_position = Vector2(6, 0)
+
+[node name="raycast_left" type="RayCast2D" parent="."]
+position = Vector2(0, 8)
+target_position = Vector2(-6, 0)
 
 [node name="enemy_death_zone" type="Area2D" parent="."]
 collision_layer = 8

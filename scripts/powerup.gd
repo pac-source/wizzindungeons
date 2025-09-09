@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	queue_free()
+	animation_player.play("pickup")
