@@ -83,7 +83,7 @@ func _physics_process(delta : float):
 	# short jump	
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y = JUMP_VELOCITY / 4
-	
+
 	## MOVEMENT
 	# dashing
 	var floor_damping : float = 2.0 if is_on_floor() else 0.2
