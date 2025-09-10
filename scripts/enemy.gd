@@ -4,14 +4,19 @@ const SPEED: float = 27
 const ACCLERATION: float = 5.5
 const GRAVITY: float = 200.0
 
-var direction = 1
+var direction: int = 1
+var y_differnce_player_enemy : float = 0.0
+var is_alive = true
 
 @onready var raycast_left: RayCast2D = $raycast_left
 @onready var raycast_right: RayCast2D = $raycast_right
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var spawn_hit: Area2D = $spawn_hit
 @onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 @onready var collision_for_enemy: CollisionShape2D = $collision_for_enemy
+@onready var animation: AnimationPlayer = $animation
+
 
 func _physics_process(delta : float) -> void:
 	velocity.x = move_toward(velocity.x, SPEED * delta, ACCLERATION * delta)
@@ -24,7 +29,7 @@ func _process(delta : float) -> void:
 		position.y += velocity.y
 		animated_sprite_2d.play("fall")
 	
-	elif is_on_floor():
+	elif is_on_floor() and is_alive:
 		animated_sprite_2d.play("walk")
 		position.x += velocity.x * direction
 		if  raycast_right.is_colliding():
@@ -38,6 +43,16 @@ func _process(delta : float) -> void:
 	move_and_slide()
 
 
-func _on_enemy_death_zone_area_entered(area: Area2D) -> void:
-	collision_for_enemy.queue_free()
-	animated_sprite_2d.play("dead")
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	y_differnce_player_enemy = position.y - body.position.y
+	if(body.name == "player"):
+		if (y_differnce_player_enemy < 5):
+			print("you die")
+		else:
+			body.enemy_bounce()
+			is_alive = false
+			animation.play("die")
+			#print("he dies")
+	else:
+		print(body.name)

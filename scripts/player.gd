@@ -32,6 +32,7 @@ func _ready():
 	add_child(input_buffer_timer)
 
 func _physics_process(delta : float):
+	print(jump_available)
 	var horizontal_input = Input.get_axis("move_left", "move_right") 
 	var jump_attempted = Input.is_action_just_pressed("jump")
 	
@@ -119,6 +120,10 @@ func _physics_process(delta : float):
 	## GRAVITY AND OTHER PHYSICS
 	velocity.y += get_the_gravity() * delta	
 	move_and_slide()
+
+func enemy_bounce():
+	velocity.y = JUMP_VELOCITY / 4
+	jump_available = false
 
 func get_the_gravity():
 	if Input.is_action_just_pressed("duck_down"):
