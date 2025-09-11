@@ -32,7 +32,6 @@ func _ready():
 	add_child(input_buffer_timer)
 
 func _physics_process(delta : float):
-	print(jump_available)
 	var horizontal_input = Input.get_axis("move_left", "move_right") 
 	var jump_attempted = Input.is_action_just_pressed("jump")
 	
