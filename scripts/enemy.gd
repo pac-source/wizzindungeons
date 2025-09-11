@@ -54,5 +54,3 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 			is_alive = false
 			animation.play("die")
 			#print("he dies")
-	else:
-		print(body.name)
