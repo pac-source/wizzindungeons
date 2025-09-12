@@ -1,10 +1,11 @@
-[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://c0bco07sfkaxi"]
+[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://c0bco07sfkaxi"]
 
 [ext_resource type="Texture2D" uid="uid://ch7hqcyt58bc0" path="res://sprites/Textures-16.png" id="1_d87ds"]
 [ext_resource type="PackedScene" uid="uid://bp0nxjp63jltq" path="res://scenes/coin.tscn" id="2_ewggy"]
 [ext_resource type="Texture2D" uid="uid://2pfmidtra6q1" path="res://sprites/bluecave_tilemap.png" id="2_gu1qk"]
 [ext_resource type="PackedScene" uid="uid://bx7l8en1cvq1d" path="res://scenes/powerup.tscn" id="3_ewggy"]
 [ext_resource type="PackedScene" uid="uid://dg5e6gf3j6g1f" path="res://scenes/enemy.tscn" id="4_5ubko"]
+[ext_resource type="Texture2D" uid="uid://wdig5r1emhce" path="res://sprites/bluecave_blocks.png" id="6_8x4tn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1g4r3"]
 texture = ExtResource("1_d87ds")
@@ -553,9 +554,21 @@ scenes/2/scene = ExtResource("3_ewggy")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_d87ds"]
 scenes/1/scene = ExtResource("4_5ubko")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_igcxs"]
+texture = ExtResource("6_8x4tn")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1g4r3")
 sources/2 = SubResource("TileSetScenesCollectionSource_l1ax2")
 sources/3 = SubResource("TileSetScenesCollectionSource_d87ds")
 sources/1 = SubResource("TileSetAtlasSource_8x4tn")
+sources/4 = SubResource("TileSetAtlasSource_igcxs")
