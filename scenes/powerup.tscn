@@ -189,7 +189,8 @@ shape = SubResource("CircleShape2D_pufsy")
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_406cw")
 autoplay = "default"
-frame_progress = 0.775781
+frame = 3
+frame_progress = 0.828579
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
