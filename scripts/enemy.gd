@@ -46,8 +46,9 @@ func _process(delta : float) -> void:
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	y_differnce_player_enemy = position.y - body.position.y
+	print(y_differnce_player_enemy)
 	if(body.name == "player"):
-		if (y_differnce_player_enemy < 5):
+		if (y_differnce_player_enemy < 13):
 			print("you die")
 		else:
 			body.enemy_bounce()

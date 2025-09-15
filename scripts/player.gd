@@ -121,7 +121,7 @@ func _physics_process(delta : float):
 	move_and_slide()
 
 func enemy_bounce():
-	velocity.y = JUMP_VELOCITY / 4
+	velocity.y = JUMP_VELOCITY / 2
 	jump_available = false
 
 func get_the_gravity():
