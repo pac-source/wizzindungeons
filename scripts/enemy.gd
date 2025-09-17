@@ -45,10 +45,11 @@ func _process(delta : float) -> void:
 
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	y_differnce_player_enemy = position.y - body.position.y
-	print(y_differnce_player_enemy)
 	if(body.name == "player"):
-		if (y_differnce_player_enemy < 13):
+		y_differnce_player_enemy = position.y - body.position.y
+		print("y diff: " + str(y_differnce_player_enemy) + " player.y velocity: " + str(body.return_velocity()))
+		if (y_differnce_player_enemy < 12.55 or body.return_velocity() < 0.0):
+			player_variables.level_restart()
 			print("you die")
 		else:
 			body.enemy_bounce()

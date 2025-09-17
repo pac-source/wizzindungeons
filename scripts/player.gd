@@ -20,6 +20,7 @@ const COYOTE_TIME = 0.08
 var input_buffer_timer : Timer
 var coyote_timer = 0.0
 var jump_available : bool = true
+var duck_down = 1
 
 @onready var sprite_2d := $AnimatedSprite2D
 @onready var player: CharacterBody2D = $"."
@@ -101,11 +102,9 @@ func _physics_process(delta : float):
 			velocity.x = MAX_SPEED if velocity.x > 0 else -MAX_SPEED
 		elif Input.is_action_pressed("dash"): 
 			if current_velocity < MIN_DASH_SPEED:
-				velocity.x += horizontal_input * SPEED * dash_multiplier * delta
+				velocity.x += horizontal_input * SPEED * dash_multiplier * duck_down * delta
 			elif current_velocity > MAX_DASH_SPEED:
-				velocity.x -= horizontal_input * SPEED * dash_multiplier * delta
-		
-		# print("velocity.x: " + str(velocity.x) + " current velocity: " + str(current_velocity))
+				velocity.x -= horizontal_input * SPEED * dash_multiplier * duck_down * delta
 	else:
 		velocity.x = move_toward(velocity.x, 0, FRICTION * floor_damping * delta)
 	
@@ -125,7 +124,13 @@ func enemy_bounce():
 	jump_available = false
 
 func get_the_gravity():
-	if Input.is_action_just_pressed("duck_down"):
-		return FAST_FALL_GRAVITY
+	if Input.is_action_pressed("duck_down"):
+		sprite_2d.play("pound")
+		duck_down = 0
+		return 0
 	else:
+		duck_down = 1
 		return GRAVITY
+
+func return_velocity():
+	return velocity.y
