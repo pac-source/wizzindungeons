@@ -7,7 +7,12 @@ var player_health = 3
 var chemical_bottle = 0
 var coins_collected = 0
 
+func _process(_delta) -> void:
+	if coins_collected > 99:
+		player_lives += 1
+		coins_collected = 0
 
 func level_restart():
-	player_variables.chemical_bottle = 0
+	chemical_bottle = 0
+	player_lives -= 1
 	get_tree().reload_current_scene()

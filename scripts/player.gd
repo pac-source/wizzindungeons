@@ -10,17 +10,19 @@ const MAX_DASH_SPEED = 420.0
 const GRAVITY = 2000.0
 const FALL_GRAVITY = 3000.0
 const FAST_FALL_GRAVITY = 30000.0
+const GLIDE_GRAVITY = 600.0
 
 const JUMP_VELOCITY = -550.0
 const MAX_JUMP_VELOCITY = -590.0
 
 const INPUT_BUFFER = 0.125
-const COYOTE_TIME = 0.08 
+const COYOTE_TIME = 0.08
+const GLIDE_TIME = 0.55
 
 var input_buffer_timer : Timer
 var coyote_timer = 0.0
+var glide_timer = 0.0
 var jump_available : bool = true
-var duck_down = 1
 
 @onready var sprite_2d := $AnimatedSprite2D
 @onready var player: CharacterBody2D = $"."
@@ -45,8 +47,10 @@ func _physics_process(delta : float):
 			sprite_2d.play("run")
 		else:
 			sprite_2d.play("idle")
-	else:
+	elif !is_on_floor() and Input.is_action_pressed("jump"):
 		sprite_2d.play("jump")
+	else:
+		sprite_2d.play("fall")
 	
 	#flip sprite
 	if horizontal_input == -1:
@@ -70,15 +74,15 @@ func _physics_process(delta : float):
 		jump_available = false
 	if is_on_floor():
 		jump_available = true
-		
-	# coyote jump 
-		# don't change this indendation
 		coyote_timer = COYOTE_TIME
+		glide_timer = GLIDE_TIME
+	
 	coyote_timer -= delta
-	# print("coyote time: " + str(coyote_timer) + "\ndelta: " + str(delta))
+	glide_timer -= delta
+	
 	if coyote_timer <= 0:
 		jump_available = false
-	else:	
+	else:
 		jump_available = true
 	
 	# short jump	
@@ -102,21 +106,13 @@ func _physics_process(delta : float):
 			velocity.x = MAX_SPEED if velocity.x > 0 else -MAX_SPEED
 		elif Input.is_action_pressed("dash"): 
 			if current_velocity < MIN_DASH_SPEED:
-				velocity.x += horizontal_input * SPEED * dash_multiplier * duck_down * delta
+				velocity.x += horizontal_input * SPEED * dash_multiplier * delta
 			elif current_velocity > MAX_DASH_SPEED:
-				velocity.x -= horizontal_input * SPEED * dash_multiplier * duck_down * delta
+				velocity.x -= horizontal_input * SPEED * dash_multiplier * delta
 	else:
 		velocity.x = move_toward(velocity.x, 0, FRICTION * floor_damping * delta)
 	
-	## RAYCAST OFFSET
-	#### TODO: FIX raycast errors 
-	#if player.left_outer.is_colliding() and !player.left_inner.is_colliding() and !player.right_inner.is_colliding() and !player.right_outer.is_colliding():
-		#player.golbal_position.x -= 5
-	#elif !player.left_outer.is_colliding() and !player.left_inner.is_colliding() and !player.right_inner.is_colliding() and player.right_outer.is_colliding():
-		#player.global_position.x += 5
-	
-	## GRAVITY AND OTHER PHYSICS
-	velocity.y += get_the_gravity() * delta	
+	velocity.y += get_the_gravity() * delta
 	move_and_slide()
 
 func enemy_bounce():
@@ -124,12 +120,13 @@ func enemy_bounce():
 	jump_available = false
 
 func get_the_gravity():
-	if Input.is_action_pressed("duck_down"):
+	if Input.is_action_pressed("kick") and !is_on_floor() and !Input.is_action_pressed("jump"):
 		sprite_2d.play("pound")
-		duck_down = 0
-		return 0
+		if glide_timer > 0:
+			return 0
+		else:
+			return GLIDE_GRAVITY
 	else:
-		duck_down = 1
 		return GRAVITY
 
 func return_velocity():
