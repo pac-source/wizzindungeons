@@ -11,8 +11,6 @@ var is_alive = true
 @onready var raycast_left: RayCast2D = $raycast_left
 @onready var raycast_right: RayCast2D = $raycast_right
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var spawn_hit: Area2D = $spawn_hit
 @onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
 @onready var collision_for_enemy: CollisionShape2D = $collision_for_enemy
 @onready var animation: AnimationPlayer = $animation
@@ -47,8 +45,8 @@ func _process(delta : float) -> void:
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if(body.name == "player"):
 		y_differnce_player_enemy = position.y - body.position.y
-		print("y diff: " + str(y_differnce_player_enemy) + " player.y velocity: " + str(body.return_velocity()))
-		if (y_differnce_player_enemy < 12.55 or body.return_velocity() < 0.0):
+		print("ply pos: " + str(body.position.y) + " enem pos: " + str(position.y))
+		if (body.position.y < position.y):
 			player_variables.level_restart()
 			print("you die")
 		else:
