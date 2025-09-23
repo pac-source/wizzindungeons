@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://s5iw662nroau"]
+[gd_scene load_steps=3 format=3 uid="uid://s5iw662nroau"]
 
+[ext_resource type="Theme" uid="uid://bi32yt6gjo0wj" path="res://misc/game_menu_theme.tres" id="1_vjb58"]
 [ext_resource type="Script" uid="uid://e3yicc1rcvu4" path="res://scripts/menu.gd" id="1_yqeox"]
 
 [node name="Menu" type="Control"]
@@ -9,7 +10,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_vjb58")
 script = ExtResource("1_yqeox")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="start" type="Button" parent="."]
 layout_mode = 0
