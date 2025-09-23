@@ -26,11 +26,12 @@ label_settings = SubResource("LabelSettings_u5sy4")
 script = ExtResource("2_ek3oe")
 
 [node name="lives" type="Label" parent="."]
-offset_left = 542.0
-offset_top = 177.0
-offset_right = 640.0
-offset_bottom = 226.0
+offset_left = 518.0
+offset_top = 176.0
+offset_right = 628.0
+offset_bottom = 225.0
 text = "Lives: 0
-"
+Health: 0"
 label_settings = SubResource("LabelSettings_mg525")
+horizontal_alignment = 2
 script = ExtResource("3_ek3oe")

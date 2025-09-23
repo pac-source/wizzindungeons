@@ -29,6 +29,10 @@ window/stretch/mode="viewport"
 
 project/assembly_name="wizzindungeons"
 
+[gui]
+
+theme/custom_font="uid://dxbxo5hpc0ykf"
+
 [input]
 
 ui_select={
