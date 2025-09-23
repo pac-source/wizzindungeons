@@ -129,5 +129,6 @@ func get_the_gravity():
 	else:
 		return GRAVITY
 
-func return_velocity():
-	return velocity.y
+func play_hurt():
+	player_variables.player_life()
+	sprite_2d.play("hurt")
