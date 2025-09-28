@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://dncw8ptp726ac"]
+[gd_scene load_steps=11 format=4 uid="uid://dncw8ptp726ac"]
 
 [ext_resource type="PackedScene" uid="uid://dhkfexqag7ntu" path="res://scenes/player.tscn" id="1_cx3fo"]
 [ext_resource type="Script" uid="uid://dnilc085xd1qf" path="res://scripts/game.gd" id="1_lnu2h"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://vxm6wn5neohg" path="res://scenes/blue_cave_background.tscn" id="8_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cxbm5i1hyuq1a" path="res://scenes/default_camera_test.tscn" id="8_gee14"]
 [ext_resource type="PackedScene" uid="uid://bqtpu7ob03da8" path="res://scenes/blue_cave_foreground.tscn" id="9_0tnpc"]
+[ext_resource type="AudioStream" uid="uid://k8dnk5gd02th" path="res://misc/music/blue_cave.wav" id="9_vtaks"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 distance = -399.0
@@ -40,3 +41,9 @@ limit_right = 2622
 
 [node name="Blue_cave_foreground" parent="." instance=ExtResource("9_0tnpc")]
 scroll_offset = Vector2(-1280, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_vtaks")
+volume_db = -7.5
+autoplay = true
+mix_target = 1

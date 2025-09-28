@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwn67g1rti0a8"]
 
 [ext_resource type="Script" uid="uid://b6c0sy0ty4u58" path="res://scripts/game_over_screen.gd" id="1_61w2s"]
-[ext_resource type="Theme" uid="uid://bi32yt6gjo0wj" path="res://misc/game_menu_theme.tres" id="1_jw6e5"]
+[ext_resource type="Theme" uid="uid://b8uy2ki0frdw0" path="res://misc/game_over_theme.tres" id="1_jw6e5"]
 
 [node name="game_over_screen" type="Control"]
 layout_mode = 3
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0687983, 0.0687983, 0.0687983, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -32,6 +32,11 @@ offset_top = -22.0
 offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Game Over"
+horizontal_alignment = 1
 
 [node name="play_again" type="Button" parent="VBoxContainer"]
 layout_mode = 2

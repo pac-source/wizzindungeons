@@ -14,6 +14,8 @@ const GLIDE_GRAVITY = 600.0
 
 const JUMP_VELOCITY = -550.0
 const MAX_JUMP_VELOCITY = -590.0
+const HIT_JERK_X = 155.0
+const HIT_JERK_Y = 275.50
 
 const INPUT_BUFFER = 0.125
 const COYOTE_TIME = 0.08
@@ -23,9 +25,13 @@ var input_buffer_timer : Timer
 var coyote_timer = 0.0
 var glide_timer = 0.0
 var jump_available : bool = true
+var velocity_x_dir = 0.0
+var player_hurt_timer = 0.0
+var player_death_timer = 0.0
 
 @onready var sprite_2d := $AnimatedSprite2D
 @onready var player: CharacterBody2D = $"."
+@onready var animation_player: AnimationPlayer = $animation_player
 
 func _ready():
 	# Setup input buffer timer
@@ -45,11 +51,11 @@ func _physics_process(delta : float):
 			sprite_2d.play("walk")
 		elif horizontal_input and Input.is_action_pressed("dash"):
 			sprite_2d.play("run")
-		else:
+		elif player_death_timer < 0:
 			sprite_2d.play("idle")
 	elif !is_on_floor() and Input.is_action_pressed("jump"):
 		sprite_2d.play("jump")
-	else:
+	elif !is_on_floor() and player_hurt_timer < 0:
 		sprite_2d.play("fall")
 	
 	#flip sprite
@@ -113,6 +119,8 @@ func _physics_process(delta : float):
 		velocity.x = move_toward(velocity.x, 0, FRICTION * floor_damping * delta)
 	
 	velocity.y += get_the_gravity() * delta
+	player_hurt_timer -= delta
+	player_death_timer -= delta
 	move_and_slide()
 
 func enemy_bounce():
@@ -130,5 +138,26 @@ func get_the_gravity():
 		return GRAVITY
 
 func play_hurt():
+	player_hurt_timer = 0.27
 	player_variables.player_life()
-	sprite_2d.play("hurt")
+	player.velocity.y -= HIT_JERK_Y
+	if player_variables.player_health <= 0:
+		player_death_timer = 0.5
+		animation_player.play("player_death")
+	else:
+		animation_player.play("player_hurt")
+	
+	if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+		velocity_x_dir = 2
+		if Input.is_action_pressed("dash") and player.velocity.x > 180.0:
+			velocity_x_dir = 2.5
+	else:
+		velocity_x_dir = 1
+	
+	if sprite_2d.flip_h == true:
+		player.velocity.x += HIT_JERK_X * velocity_x_dir
+	else:
+		player.velocity.x -= HIT_JERK_X * velocity_x_dir
+
+func player_death():
+	player_variables.level_restart()
