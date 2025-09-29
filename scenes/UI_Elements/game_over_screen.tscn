@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwn67g1rti0a8"]
 
-[ext_resource type="Script" uid="uid://b6c0sy0ty4u58" path="res://scripts/game_over_screen.gd" id="1_61w2s"]
-[ext_resource type="Theme" uid="uid://b8uy2ki0frdw0" path="res://misc/game_over_theme.tres" id="1_jw6e5"]
+[ext_resource type="Theme" uid="uid://b8uy2ki0frdw0" path="res://misc/ui_themes/game_over_theme.tres" id="1_vsu7a"]
+[ext_resource type="Script" uid="uid://b6c0sy0ty4u58" path="res://scripts/game_over_screen.gd" id="2_s6gms"]
 
 [node name="game_over_screen" type="Control"]
 layout_mode = 3
@@ -10,8 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_jw6e5")
-script = ExtResource("1_61w2s")
+theme = ExtResource("1_vsu7a")
+script = ExtResource("2_s6gms")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
