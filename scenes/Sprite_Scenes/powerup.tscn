@@ -1,46 +1,46 @@
 [gd_scene load_steps=18 format=3 uid="uid://bx7l8en1cvq1d"]
 
-[ext_resource type="Script" uid="uid://bxc4hst01pik6" path="res://scripts/powerup.gd" id="1_ih772"]
-[ext_resource type="Texture2D" uid="uid://vq3skhu1cxu8" path="res://sprites/misc/chemical_bottle.png" id="2_ih772"]
-[ext_resource type="AudioStream" uid="uid://cfbr2p6hjt3ol" path="res://misc/powerup.wav" id="3_406cw"]
+[ext_resource type="Script" uid="uid://bxc4hst01pik6" path="res://scripts/powerup.gd" id="1_kgl2i"]
+[ext_resource type="Texture2D" uid="uid://vq3skhu1cxu8" path="res://sprites/misc/chemical_bottle.png" id="2_cdfeo"]
+[ext_resource type="AudioStream" uid="uid://cfbr2p6hjt3ol" path="res://misc/sfx/powerup.wav" id="3_x13be"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pufsy"]
 radius = 11.0454
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ih772"]
-atlas = ExtResource("2_ih772")
+atlas = ExtResource("2_cdfeo")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_406cw"]
-atlas = ExtResource("2_ih772")
+atlas = ExtResource("2_cdfeo")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pufsy"]
-atlas = ExtResource("2_ih772")
+atlas = ExtResource("2_cdfeo")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t4g7g"]
-atlas = ExtResource("2_ih772")
+atlas = ExtResource("2_cdfeo")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_arwl4"]
-atlas = ExtResource("2_ih772")
+atlas = ExtResource("2_cdfeo")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5dod"]
-atlas = ExtResource("2_ih772")
+atlas = ExtResource("2_cdfeo")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yb3me"]
-atlas = ExtResource("2_ih772")
+atlas = ExtResource("2_cdfeo")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0n1jv"]
-atlas = ExtResource("2_ih772")
+atlas = ExtResource("2_cdfeo")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6qyt"]
-atlas = ExtResource("2_ih772")
+atlas = ExtResource("2_cdfeo")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_406cw"]
@@ -177,7 +177,7 @@ _data = {
 }
 
 [node name="powerup" type="Node2D"]
-script = ExtResource("1_ih772")
+script = ExtResource("1_kgl2i")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
@@ -198,6 +198,6 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_406cw")
+stream = ExtResource("3_x13be")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
