@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://bw60ap3n78o5b"]
 
-[ext_resource type="Texture2D" uid="uid://dycp4y2nyp2tv" path="res://sprites/exit.png" id="1_l0aq0"]
-[ext_resource type="Script" uid="uid://dkirl673j16oc" path="res://scripts/exit.gd" id="1_uyw7u"]
+[ext_resource type="Script" uid="uid://dkirl673j16oc" path="res://scripts/exit.gd" id="1_g38wx"]
+[ext_resource type="Texture2D" uid="uid://dycp4y2nyp2tv" path="res://sprites/exit.png" id="2_4qi6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyw7u"]
 size = Vector2(22, 37)
 
 [node name="Exit" type="Node2D"]
 z_index = -1
-script = ExtResource("1_uyw7u")
+script = ExtResource("1_g38wx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-24, -24)
-texture = ExtResource("1_l0aq0")
+texture = ExtResource("2_4qi6c")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 17
