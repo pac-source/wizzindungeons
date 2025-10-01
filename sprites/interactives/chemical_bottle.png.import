@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmprvkakfw663"
-path="res://.godot/imported/shade.png-e8b4ed29d8409ca16ecfbe3fe07c3359.ctex"
+uid="uid://vq3skhu1cxu8"
+path="res://.godot/imported/chemical_bottle.png-c352efd29ad4892cf2da0ce81514ee5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/shade.png"
-dest_files=["res://.godot/imported/shade.png-e8b4ed29d8409ca16ecfbe3fe07c3359.ctex"]
+source_file="res://sprites/interactives/chemical_bottle.png"
+dest_files=["res://.godot/imported/chemical_bottle.png-c352efd29ad4892cf2da0ce81514ee5a.ctex"]
 
 [params]
 

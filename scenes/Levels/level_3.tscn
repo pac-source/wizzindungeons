@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cxbm5i1hyuq1a" path="res://scenes/Misc/default_camera_test.tscn" id="5_idx6k"]
 [ext_resource type="PackedScene" uid="uid://bqtpu7ob03da8" path="res://scenes/Background/blue_cave/blue_cave_foreground.tscn" id="6_ld14n"]
 [ext_resource type="AudioStream" uid="uid://k8dnk5gd02th" path="res://misc/music/blue_cave.wav" id="7_a55e0"]
-[ext_resource type="TileSet" uid="uid://c0bco07sfkaxi" path="res://sprites/place_holder_tileset.tres" id="8_3fumv"]
+[ext_resource type="TileSet" uid="uid://c0bco07sfkaxi" path="res://misc/tileset_config/place_holder_tileset.tres" id="8_3fumv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3bt0o"]
 distance = -399.0
@@ -33,7 +33,7 @@ position = Vector2(12, 8)
 limit_right = 5288
 
 [node name="Blue_cave_foreground" parent="." instance=ExtResource("6_ld14n")]
-scroll_offset = Vector2(-1280, 0)
+scroll_offset = Vector2(-22, -74)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_a55e0")

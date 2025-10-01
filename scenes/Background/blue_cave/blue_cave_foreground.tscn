@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bqtpu7ob03da8"]
 
-[ext_resource type="Texture2D" uid="uid://cuxxjnodsht38" path="res://sprites/rocks.png" id="1_djcya"]
+[ext_resource type="Texture2D" uid="uid://cuxxjnodsht38" path="res://sprites/background/rocks.png" id="1_djcya"]
 
 [node name="Blue_cave_foreground" type="Parallax2D"]
 z_index = 20

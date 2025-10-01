@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://bx7l8en1cvq1d"]
 
 [ext_resource type="Script" uid="uid://bxc4hst01pik6" path="res://scripts/powerup.gd" id="1_kgl2i"]
-[ext_resource type="Texture2D" uid="uid://vq3skhu1cxu8" path="res://sprites/misc/chemical_bottle.png" id="2_cdfeo"]
+[ext_resource type="Texture2D" uid="uid://vq3skhu1cxu8" path="res://sprites/interactives/chemical_bottle.png" id="2_cdfeo"]
 [ext_resource type="AudioStream" uid="uid://cfbr2p6hjt3ol" path="res://misc/sfx/powerup.wav" id="3_x13be"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pufsy"]
