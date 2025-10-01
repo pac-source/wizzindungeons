@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqrwwu7g4kj6l"
-path="res://.godot/imported/bluecave_tilemap1.png-090ce52a97207be3938c6e824377f57b.ctex"
+uid="uid://wdig5r1emhce"
+path="res://.godot/imported/bluecave_blocks.png-e1046e9be1746748dceb2a5354a20bc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bluecave_tilemap1.png"
-dest_files=["res://.godot/imported/bluecave_tilemap1.png-090ce52a97207be3938c6e824377f57b.ctex"]
+source_file="res://sprites/tileset/bluecave_blocks.png"
+dest_files=["res://.godot/imported/bluecave_blocks.png-e1046e9be1746748dceb2a5354a20bc0.ctex"]
 
 [params]
 

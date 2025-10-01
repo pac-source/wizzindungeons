@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wdig5r1emhce"
-path="res://.godot/imported/bluecave_blocks.png-f46dab74c9a6942e756e16e9d84396f1.ctex"
+uid="uid://cs3bsu2fduwd7"
+path="res://.godot/imported/mountain.png-26aea670d88fc08e694c0bbd87985ecc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/bluecave_blocks.png"
-dest_files=["res://.godot/imported/bluecave_blocks.png-f46dab74c9a6942e756e16e9d84396f1.ctex"]
+source_file="res://sprites/background/mountain.png"
+dest_files=["res://.godot/imported/mountain.png-26aea670d88fc08e694c0bbd87985ecc.ctex"]
 
 [params]
 
