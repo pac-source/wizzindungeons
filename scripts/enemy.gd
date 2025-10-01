@@ -29,13 +29,13 @@ func _process(delta : float) -> void:
 	
 	elif is_on_floor() and is_alive:
 		animated_sprite_2d.play("walk")
-		position.x += velocity.x * direction
+		position.x -= velocity.x * direction
 		if  raycast_right.is_colliding():
-			direction = -1
+			direction = 1
 			animated_sprite_2d.flip_h = true
 		
 		elif raycast_left.is_colliding():
-			direction = 1
+			direction = -1
 			animated_sprite_2d.flip_h = false
 	
 	move_and_slide()
