@@ -41,7 +41,7 @@ Once opened, you can start working on the project or run it directly from the Go
 
 ### **Objective**
 
-Navigate through the dungeon, collect all the magical bottles, avoid deadly obstacles, and reach the exit before time runs out!
+Navigate through the dungeon, collect all the magical bottles, avoid deadly obstacles, and reach the exit!
 
 ### **Controls**
 
