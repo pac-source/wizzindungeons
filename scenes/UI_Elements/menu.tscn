@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bi32yt6gjo0wj" path="res://misc/ui_themes/game_menu_theme.tres" id="1_erpp2"]
 [ext_resource type="Script" uid="uid://e3yicc1rcvu4" path="res://scripts/menu.gd" id="2_gsml2"]
-[ext_resource type="TileSet" uid="uid://c0bco07sfkaxi" path="res://sprites/place_holder_tileset.tres" id="3_scjd8"]
+[ext_resource type="TileSet" uid="uid://c0bco07sfkaxi" path="res://misc/tileset_config/place_holder_tileset.tres" id="3_scjd8"]
 [ext_resource type="PackedScene" uid="uid://vxm6wn5neohg" path="res://scenes/Background/blue_cave/blue_cave_background.tscn" id="4_eolfk"]
 
 [node name="Menu" type="Control"]

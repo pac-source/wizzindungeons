@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dhkfexqag7ntu" path="res://scenes/Sprite_Scenes/player.tscn" id="1_cx3fo"]
 [ext_resource type="Script" uid="uid://dnilc085xd1qf" path="res://scripts/game.gd" id="1_lnu2h"]
-[ext_resource type="TileSet" uid="uid://c0bco07sfkaxi" path="res://sprites/place_holder_tileset.tres" id="3_lbhrr"]
+[ext_resource type="TileSet" uid="uid://c0bco07sfkaxi" path="res://misc/tileset_config/place_holder_tileset.tres" id="3_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://bfnfdhj1ei3sp" path="res://scenes/Misc/death_zone.tscn" id="4_p57ef"]
 [ext_resource type="PackedScene" uid="uid://7hgcttb1f0j1" path="res://scenes/UI_Elements/canvas_layer.tscn" id="5_gee14"]
 [ext_resource type="PackedScene" uid="uid://vxm6wn5neohg" path="res://scenes/Background/blue_cave/blue_cave_background.tscn" id="8_0tnpc"]

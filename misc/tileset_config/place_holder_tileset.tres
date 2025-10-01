@@ -1,18 +1,18 @@
 [gd_resource type="TileSet" load_steps=14 format=3 uid="uid://c0bco07sfkaxi"]
 
 [ext_resource type="PackedScene" uid="uid://bw60ap3n78o5b" path="res://scenes/Sprite_Scenes/exit.tscn" id="1_igcxs"]
-[ext_resource type="Texture2D" uid="uid://2pfmidtra6q1" path="res://sprites/bluecave_tilemap.png" id="2_gu1qk"]
+[ext_resource type="Texture2D" uid="uid://2pfmidtra6q1" path="res://sprites/tileset/bluecave_tilemap.png" id="2_igcxs"]
 [ext_resource type="PackedScene" uid="uid://bp0nxjp63jltq" path="res://scenes/Sprite_Scenes/coin.tscn" id="3_d52jb"]
 [ext_resource type="PackedScene" uid="uid://bx7l8en1cvq1d" path="res://scenes/Sprite_Scenes/powerup.tscn" id="4_oevl4"]
 [ext_resource type="PackedScene" uid="uid://dg5e6gf3j6g1f" path="res://scenes/Sprite_Scenes/enemy.tscn" id="5_ndltb"]
-[ext_resource type="Texture2D" uid="uid://wdig5r1emhce" path="res://sprites/bluecave_blocks.png" id="6_8x4tn"]
-[ext_resource type="Texture2D" uid="uid://bqrwwu7g4kj6l" path="res://sprites/bluecave_tilemap1.png" id="6_igcxs"]
+[ext_resource type="Texture2D" uid="uid://wdig5r1emhce" path="res://sprites/tileset/bluecave_blocks.png" id="6_d52jb"]
+[ext_resource type="Texture2D" uid="uid://bqrwwu7g4kj6l" path="res://sprites/tileset/bluecave_tilemap1.png" id="7_oevl4"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_d52jb"]
 scenes/1/scene = ExtResource("1_igcxs")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8x4tn"]
-texture = ExtResource("2_gu1qk")
+texture = ExtResource("2_igcxs")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -170,7 +170,7 @@ scenes/2/scene = ExtResource("4_oevl4")
 scenes/1/scene = ExtResource("5_ndltb")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_igcxs"]
-texture = ExtResource("6_8x4tn")
+texture = ExtResource("6_d52jb")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -181,7 +181,7 @@ texture = ExtResource("6_8x4tn")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d52jb"]
-texture = ExtResource("6_igcxs")
+texture = ExtResource("7_oevl4")
 0:0/0 = 0
 0:0/0/terrain_set = 1
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 0.0161753, 8, 8, -8, 8)

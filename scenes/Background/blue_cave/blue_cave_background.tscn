@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://vxm6wn5neohg"]
 
-[ext_resource type="Texture2D" uid="uid://ddaj7l1nx4ua1" path="res://sprites/sea.png" id="1_q46xb"]
-[ext_resource type="Texture2D" uid="uid://cs3bsu2fduwd7" path="res://sprites/mountain.png" id="2_d4022"]
-[ext_resource type="Texture2D" uid="uid://bl85hu5dm75mr" path="res://sprites/background.png" id="3_d4022"]
-[ext_resource type="Texture2D" uid="uid://dmprvkakfw663" path="res://sprites/shade.png" id="4_iw76t"]
+[ext_resource type="Texture2D" uid="uid://ddaj7l1nx4ua1" path="res://sprites/background/sea.png" id="1_q46xb"]
+[ext_resource type="Texture2D" uid="uid://cs3bsu2fduwd7" path="res://sprites/background/mountain.png" id="2_d4022"]
+[ext_resource type="Texture2D" uid="uid://bl85hu5dm75mr" path="res://sprites/background/background.png" id="3_d4022"]
+[ext_resource type="Texture2D" uid="uid://dmprvkakfw663" path="res://sprites/background/shade.png" id="4_iw76t"]
 
 [node name="Blue_cave_Background" type="ParallaxBackground"]
 
