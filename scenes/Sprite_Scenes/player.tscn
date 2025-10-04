@@ -265,6 +265,9 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(11, 25)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 radius = 5.0
 
@@ -273,9 +276,6 @@ radius = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
 size = Vector2(9.25, 7)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(11, 25)
 
 [sub_resource type="Animation" id="Animation_y4r1p"]
 length = 0.001
@@ -410,6 +410,16 @@ sprite_frames = SubResource("SpriteFrames_vrhqb")
 animation = &"hurt"
 autoplay = "idle"
 
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 5
+collision_layer = 29
+collision_mask = 7
+
+[node name="hitbox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_g2els")
+debug_color = Color(0.961112, 0.186353, 0.175121, 0.42)
+
 [node name="head_collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_g2els")
@@ -421,17 +431,6 @@ shape = SubResource("CircleShape2D_qhqgy")
 [node name="leg_collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 15)
 shape = SubResource("RectangleShape2D_dqkch")
-
-[node name="Area2D" type="Area2D" parent="."]
-visible = false
-z_index = 5
-collision_layer = 29
-collision_mask = 7
-
-[node name="hitbox" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 6)
-shape = SubResource("RectangleShape2D_g2els")
-debug_color = Color(0.961112, 0.186353, 0.175121, 0.42)
 
 [node name="animation_player" type="AnimationPlayer" parent="."]
 libraries = {
