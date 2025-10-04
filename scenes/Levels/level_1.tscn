@@ -7,12 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://vxm6wn5neohg" path="res://scenes/Background/blue_cave/blue_cave_background.tscn" id="5_o21ul"]
 [ext_resource type="PackedScene" uid="uid://bqtpu7ob03da8" path="res://scenes/Background/blue_cave/blue_cave_foreground.tscn" id="6_y368g"]
 [ext_resource type="PackedScene" uid="uid://7hgcttb1f0j1" path="res://scenes/UI_Elements/canvas_layer.tscn" id="7_y368g"]
-[ext_resource type="AudioStream" uid="uid://bsfdacayo52kc" path="res://misc/music/another_cave.wav" id="8_l5ivm"]
+[ext_resource type="AudioStream" uid="uid://k8dnk5gd02th" path="res://misc/music/blue_cave.wav" id="8_l5ivm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vtxvj"]
 distance = -431.0
 
-[node name="Level_1" type="Node2D"]
+[node name="level_1" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_ac15f")]
 z_index = 1
@@ -39,5 +39,6 @@ shape = SubResource("WorldBoundaryShape2D_vtxvj")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_l5ivm")
-volume_db = -7.75
+volume_db = -7.5
 autoplay = true
+mix_target = 1
