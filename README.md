@@ -64,17 +64,22 @@ Navigate through the dungeon, collect all the magical bottles, avoid deadly obst
 
 You can find the latest releases of **Wizard in Dungeons** at the following tags:
 
-### **v0.prototype-a1f45**
+### **WD v0.prototype-a1f45**
 
 * **Released:** September 07 2025
-* **Download:** [v0.prototype-a1f45 (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v0.prototype-a1f45)
+* **Download:** [wizzindungeons_v0.prototype-a1f45 (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v0.prototype-a1f45)
 
-### **v0.prototype-681db**
+### **WD v0.prototype-681db**
 
 * **Released:** September 13 2025
-* **Download:** [v0.prototype-681db (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v0.prototype-681db)
+* **Download:** [wizzindungeons_v0.prototype-681db (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v0.prototype-681db)
 
-### **v1.prototype-ea77a** (Latest)
+### **WD v1.prototype-ea77a**
 
 * **Released:** October 04 2025
-* **Download:** [v1.prototype-ea77a (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v1.prototype-ea77a)
+* **Download:** [wizzindungeons_v1.prototype-ea77a (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v1.prototype-ea77a)
+
+### **WD v0.alpha-01d52** (Latest)
+
+* **Released:** October 04 2025
+* **Download:** [wizzindungeons_v0.alpha-01d52 (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v0.alpha01d52)
