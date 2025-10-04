@@ -4,6 +4,5 @@ extends Node2D
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	player_variables.coins_collected += 1
-	#print(player_variables.coins_collected)
 	animation_player.play("pickup")
 	

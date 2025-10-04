@@ -40,17 +40,13 @@ func _process(delta : float) -> void:
 	
 	move_and_slide()
 
-
-
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if(body.name == "player"):
 		y_differnce_player_enemy = position.y - body.position.y
-		print("ply pos: " + str(body.position.y) + " enem pos: " + str(position.y) + " Differ: " + str(y_differnce_player_enemy))
+		#print("ply pos: " + str(body.position.y) + " enem pos: " + str(position.y) + " Differ: " + str(y_differnce_player_enemy))
 		if (y_differnce_player_enemy < 12.8):
 			body.play_hurt()
-			#print("you died")
 		else:
 			body.enemy_bounce()
 			is_alive = false
 			animation.play("die")
-			#print("he dies")

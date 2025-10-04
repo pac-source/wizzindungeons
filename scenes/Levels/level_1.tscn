@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://bafx0gbwmibrk"]
+[gd_scene load_steps=11 format=4 uid="uid://bafx0gbwmibrk"]
 
 [ext_resource type="PackedScene" uid="uid://dhkfexqag7ntu" path="res://scenes/Sprite_Scenes/player.tscn" id="1_ac15f"]
+[ext_resource type="Script" uid="uid://dnilc085xd1qf" path="res://scripts/game.gd" id="1_xxpsm"]
 [ext_resource type="TileSet" uid="uid://c0bco07sfkaxi" path="res://misc/tileset_config/place_holder_tileset.tres" id="2_3ydyl"]
 [ext_resource type="PackedScene" uid="uid://cxbm5i1hyuq1a" path="res://scenes/Misc/default_camera_test.tscn" id="2_vtxvj"]
 [ext_resource type="PackedScene" uid="uid://bfnfdhj1ei3sp" path="res://scenes/Misc/death_zone.tscn" id="4_vtxvj"]
@@ -13,6 +14,7 @@
 distance = -431.0
 
 [node name="level_1" type="Node2D"]
+script = ExtResource("1_xxpsm")
 
 [node name="player" parent="." instance=ExtResource("1_ac15f")]
 z_index = 1
