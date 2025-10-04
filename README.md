@@ -75,14 +75,14 @@ You can find the latest releases of **Wizard in Dungeons** at the following tags
 ### **v0.prototype-a1f45**
 
 * **Released:** September 07 2025
-* **Download:** [v0.prototype-a1f45 (zip)](https://github.com/pac-source/wizzindungeons/releases/tag/v0.prototype-a1f45)
+* **Download:** [v0.prototype-a1f45 (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v0.prototype-a1f45)
 
 ### **v0.prototype-681db**
 
 * **Released:** September 13 2025
-* **Download:** [v0.prototype-681db (zip)](https://github.com/pac-source/wizzindungeons/releases/tag/v0.prototype-681db)
+* **Download:** [v0.prototype-681db (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v0.prototype-681db)
 
 ### **v1.prototype-ea77a** (Latest)
 
 * **Released:** October 04 2025
-* **Download:** [v1.prototype-ea77a (zip)](https://github.com/pac-source/wizzindungeons/releases/tag/v1.prototype-ea77a)
+* **Download:** [v1.prototype-ea77a (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v1.prototype-ea77a)
