@@ -1,18 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dncw8ptp726ac"]
+[gd_scene load_steps=2 format=3 uid="uid://dncw8ptp726ac"]
 
-[ext_resource type="Script" uid="uid://dnilc085xd1qf" path="res://scripts/game.gd" id="1_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://bafx0gbwmibrk" path="res://scenes/Levels/level_1.tscn" id="2_4m24n"]
-[ext_resource type="PackedScene" uid="uid://cn6p4t7sq7ney" path="res://scenes/Levels/level_2.tscn" id="3_4ewyb"]
-[ext_resource type="PackedScene" uid="uid://bn8mhvwxequsm" path="res://scenes/Levels/level_3.tscn" id="4_og37a"]
-[ext_resource type="PackedScene" uid="uid://ei3gnkfrcff6" path="res://scenes/Levels/level_4.tscn" id="5_fss0f"]
+[ext_resource type="Script" uid="uid://b4umej3avt4gm" path="res://scripts/game_manager.gd" id="1_4m24n"]
 
 [node name="Game" type="Node"]
-script = ExtResource("1_lnu2h")
-
-[node name="Level_1" parent="." instance=ExtResource("2_4m24n")]
-
-[node name="level_2" parent="." instance=ExtResource("3_4ewyb")]
-
-[node name="level_3" parent="." instance=ExtResource("4_og37a")]
-
-[node name="level_4" parent="." instance=ExtResource("5_fss0f")]
+script = ExtResource("1_4m24n")
