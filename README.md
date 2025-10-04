@@ -58,14 +58,6 @@ Navigate through the dungeon, collect all the magical bottles, avoid deadly obst
 
   * **Ctrl** or **C**: Glide to float down slowly or cross wide gaps.
 
-Thanks for pointing that out! From the screenshot you provided, I see that the release tags are actually:
-
-* `v1.prototype-ea77a`
-* `v0.prototype-a1f45`
-* `v0.prototype-681db`
-
-I'll update the release section accordingly with the correct versions and tags. Here’s how it should look:
-
 ---
 
 ## **Releases**
