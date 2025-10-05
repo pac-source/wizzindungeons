@@ -44,6 +44,8 @@ func _physics_process(delta : float):
 	var horizontal_input = Input.get_axis("move_left", "move_right") 
 	var jump_attempted = Input.is_action_just_pressed("jump")
 	
+	if player_variables.player_dead == true:
+		return
 	## SPRITE  ANIMATION
 	# basic animation
 	if is_on_floor():
@@ -142,6 +144,7 @@ func play_hurt():
 	player_variables.player_life()
 	player.velocity.y -= HIT_JERK_Y
 	if player_variables.player_health <= 0:
+		player_variables.player_dead = true
 		player_death_timer = 0.5
 		animation_player.play("player_death")
 	else:
