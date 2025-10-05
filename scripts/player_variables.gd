@@ -24,4 +24,5 @@ func level_restart():
 	chemical_bottle = 0
 	player_lives -= 1
 	player_health = 3
+	player_dead = false
 	get_tree().reload_current_scene()
