@@ -62,22 +62,7 @@ Navigate through the dungeon, collect all the magical bottles, avoid deadly obst
 
 ## **Releases**
 
-You can find the latest releases of **Wizard in Dungeons** at the following tags:
-
-### **WD v0.prototype-a1f45**
-
-* **Released:** September 07 2025
-* **Download:** [wizzindungeons_v0.prototype-a1f45 (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v0.prototype-a1f45)
-
-### **WD v0.prototype-681db**
-
-* **Released:** September 13 2025
-* **Download:** [wizzindungeons_v0.prototype-681db (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v0.prototype-681db)
-
-### **WD v1.prototype-ea77a**
-
-* **Released:** October 04 2025
-* **Download:** [wizzindungeons_v1.prototype-ea77a (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v1.prototype-ea77a)
+You can find the latest releases of **Wizard in Dungeons** at the following tag:
 
 ### **WD v0.alpha-01d52** (Latest)
 
