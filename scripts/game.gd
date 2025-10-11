@@ -2,7 +2,7 @@ extends Node
 
 class_name game_state
 
-var levels: Array = ["level_1", "level_2", "level_3", "level_4"]
+var levels: Array = ["level_1", "level_2", "level_3", "level_4", "level_5"]
 var current_level = ""
 var next_level = ""
 
