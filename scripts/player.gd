@@ -31,7 +31,8 @@ var player_death_timer = 0.0
 
 @onready var sprite_2d := $AnimatedSprite2D
 @onready var player: CharacterBody2D = $"."
-@onready var animation_player: AnimationPlayer = $animation_player
+@onready var player_animations: AnimationPlayer = %player_animations
+@onready var jump: AudioStreamPlayer = $jump
 
 func _ready():
 	# Setup input buffer timer
@@ -145,10 +146,9 @@ func play_hurt():
 	player.velocity.y -= HIT_JERK_Y
 	if player_variables.player_health <= 0:
 		player_variables.player_dead = true
-		player_death_timer = 0.5
-		animation_player.play("player_death")
+		player_animations.play("player_death")
 	else:
-		animation_player.play("player_hurt")
+		player_animations.play("player_hurt")
 	
 	if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 		velocity_x_dir = 2
