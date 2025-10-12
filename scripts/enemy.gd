@@ -47,6 +47,7 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		if (y_differnce_player_enemy < 12.8):
 			body.play_hurt()
 		else:
+			player_variables.player_score += 300
 			body.enemy_bounce()
 			is_alive = false
 			animation.play("die")

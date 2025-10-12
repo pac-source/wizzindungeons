@@ -7,14 +7,17 @@ var player_health = 3
 var chemical_bottle = 0
 var coins_collected = 0
 var player_dead = false
+var player_score = 0
 
 func _process(delta) -> void:
+	#print(player_score)
 	if coins_collected > 99:
 		player_lives += 1
 		coins_collected = 0
 	if player_lives < 0:
 		player_lives = 5
 		coins_collected = 0
+		player_score = 0
 		get_tree().change_scene_to_file("res://scenes/UI_Elements/game_over_screen.tscn")
 
 func player_life():
