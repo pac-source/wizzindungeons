@@ -11,7 +11,7 @@ A 2D dungeon crawler where you play as a wizard, collecting magical bottles, avo
 
   * [Objective](#objective)
   * [Controls](#controls)
-
+* [Release](#release)
 ---
 
 ## **Installation**
@@ -64,7 +64,7 @@ Navigate through the dungeon, collect all the magical bottles, avoid deadly obst
 
 You can find the latest release of **Wizard in Dungeons** at the following tag:
 
-### **WD v0.alpha-01d52**
+### **WD v0.alpha.1.0**
 
-* **Released:** October 04 2025
-* **Download:** [wizzindungeons_v0.alpha-01d52 (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v0.alpha01d52)
+* **Released:** October 13 2025
+* **Download:** [wizzindungeons_v0.alpha.1.0 (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v0.alpha1.0)
