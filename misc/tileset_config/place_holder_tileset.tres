@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=14 format=3 uid="uid://c0bco07sfkaxi"]
+[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://c0bco07sfkaxi"]
 
 [ext_resource type="PackedScene" uid="uid://bw60ap3n78o5b" path="res://scenes/Sprite_Scenes/exit.tscn" id="1_igcxs"]
 [ext_resource type="Texture2D" uid="uid://2pfmidtra6q1" path="res://sprites/tileset/bluecave_tilemap.png" id="2_igcxs"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dg5e6gf3j6g1f" path="res://scenes/Sprite_Scenes/enemy.tscn" id="5_ndltb"]
 [ext_resource type="Texture2D" uid="uid://wdig5r1emhce" path="res://sprites/tileset/bluecave_blocks.png" id="6_d52jb"]
 [ext_resource type="Texture2D" uid="uid://bqrwwu7g4kj6l" path="res://sprites/tileset/bluecave_tilemap1.png" id="7_oevl4"]
+[ext_resource type="Texture2D" uid="uid://bdqdaft6kx8ap" path="res://sprites/tileset/misc_bluecave.png" id="8_fmokg"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_d52jb"]
 scenes/1/scene = ExtResource("1_igcxs")
@@ -252,6 +253,15 @@ texture = ExtResource("7_oevl4")
 4:2/0/terrains_peering_bit/left_side = 0
 4:2/0/terrains_peering_bit/top_left_corner = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ygxy5"]
+texture = ExtResource("8_fmokg")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
@@ -266,3 +276,4 @@ sources/1 = SubResource("TileSetAtlasSource_8x4tn")
 sources/4 = SubResource("TileSetAtlasSource_igcxs")
 sources/5 = SubResource("TileSetAtlasSource_d52jb")
 sources/0 = SubResource("TileSetScenesCollectionSource_d52jb")
+sources/6 = SubResource("TileSetAtlasSource_ygxy5")
