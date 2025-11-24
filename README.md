@@ -18,7 +18,7 @@ A 2D dungeon crawler where you play as a wizard, collecting magical bottles, avo
 
 ### Prerequisites
 
-* **Godot Engine**: This project was developed using **Godot 4.4.1**. You can download the latest version from the official [Godot website](https://godotengine.org/download). Ensure you're using the same version to avoid any compatibility issues.
+* **Godot Engine**: This project was developed using **Godot 4.5.1**. You can download the latest version from the official [Godot website](https://godotengine.org/download). Ensure you're using the same version to avoid any compatibility issues.
 
 ### Steps
 
