@@ -64,7 +64,7 @@ Navigate through the dungeon, collect all the magical bottles, avoid deadly obst
 
 You can find the latest release of **Wizard in Dungeons** at the following tag:
 
-### **WD v0.alpha.1.0**
+### **WD beta0**
 
-* **Released:** October 13 2025
-* **Download:** [wizzindungeons_v0.alpha.1.0 (exe)](https://github.com/pac-source/wizzindungeons/releases/tag/v0.alpha1.0)
+* **Released:** November 28 2025
+* **Download:** [wizzindungeons_beta0(exe)](https://github.com/pac-source/wizzindungeons/releases/tag/beta0)
