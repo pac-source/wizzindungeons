@@ -10,7 +10,6 @@ var player_dead = false
 var player_score = 0
 
 func _process(delta) -> void:
-	#print(player_score)
 	if coins_collected > 99:
 		player_lives += 1
 		coins_collected = 0
