@@ -41,7 +41,7 @@ func _ready():
 	input_buffer_timer.one_shot = true
 	add_child(input_buffer_timer)
 
-	print(player_variables.go_in)
+#	print(player_variables.go_in)
 
 func _physics_process(delta : float):
 	var horizontal_input = Input.get_axis("move_left", "move_right") 
